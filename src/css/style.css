@@ -80,6 +80,14 @@ html {
 		height: 2px;
 		background-color: #000;
 	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 36px;
+	}
+
+	@media screen and (max-width: 576px) {
+		font-size: 24px;
+	}
 }
 
 .promo {
@@ -299,6 +307,11 @@ html {
 		flex-wrap: wrap;
 		row-gap: 40px;
 	}
+
+	@media screen and (max-width: 375px) {
+		margin-top: 20px;
+		row-gap: 20px;
+	}
 }
 
 .services__items {
@@ -354,6 +367,16 @@ html {
 		}
 	}
 
+	@media screen and (max-width: 576px) {
+		& li:first-child::before {
+			display: none;
+		}
+
+		& li:nth-child(3):before {
+			display: none;
+		}
+	}
+
 	@media screen and (max-width: 375px) {
 		& li:first-child::before {
 			display: none;
@@ -402,6 +425,10 @@ html {
 .works {
 	background-color: var(--light-color);
 	padding-top: 80px;
+
+	@media screen and (min-width:768px) {
+		padding-top: 50px;
+	}
 }
 
 .works__grid {
@@ -415,6 +442,19 @@ html {
 	img {
 		width: 100%;
 		box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	@media screen and (max-width: 768px) {
+		column-gap: 20px;
+		row-gap: 30px;
+		margin-top: 40px;
+	}
+
+	@media screen and (max-width: 576px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 1fr) 1.5fr;
+		column-gap: 0px;
+		row-gap: 30px;
 	}
 }
 
