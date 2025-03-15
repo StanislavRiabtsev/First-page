@@ -476,21 +476,61 @@ html {
 		height: 100%;
 		box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
 	}
+
+	@media screen and (max-width: 1200px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		gap: 30px 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 40px;
+	}
+
+	@media screen and (max-width: 576px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr) 2.1fr 1fr 0.5fr;
+		column-gap: 0px;
+		row-gap: 20px;
+	}
 }
 
 #tenement {
 	grid-column: 4/5;
 	grid-row: 1/3;
+	height: 100%;
+
+	@media screen and (max-width: 1200px) {
+		grid-row: 2/4;
+		grid-column: 2/3;
+	}
+
+	@media screen and (max-width: 576px) {
+		grid-row: auto;
+		grid-column: auto;
+	}
 }
 
 #sky {
 	grid-column: 2/4;
+
+	@media screen and (max-width: 1200px) {
+		grid-column: 1/3;
+	}
+
+	@media screen and (max-width: 576px) {
+		grid-column: auto;
+	}
 }
 
 .customers {
 	background-color: var(--light-color);
 	padding-top: 80px;
 	padding-bottom: 50px;
+
+	@media screen and (max-width: 768px) {
+		padding: 50px 0;
+	}
 }
 
 .customers__wrapper {
@@ -501,6 +541,30 @@ html {
 
 	img {
 		box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	@media screen and (max-width: 768px) {
+		& {
+			margin-top: 40px;
+			gap: 20px;
+		}
+
+		img {
+			width: calc((100% - 60px) / 4);
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		& {
+			margin-top: 30px;
+			column-gap: 36px;
+			row-gap: 20px;
+			justify-content: space-between;
+		}
+
+		img {
+			width: calc((100% - 36px) / 2);
+		}
 	}
 }
 
@@ -513,15 +577,38 @@ html {
 	font-weight: 400;
 	font-size: 20px;
 	color: var(--light-color);
+
+	@media screen and (max-width: 1024px) {
+		font-size: 16px;
+	}
+
+	@media screen and (max-width: 768px) {
+		padding: 30px var(--footer-padding-inline) 40px var(--footer-padding-inline);
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: 30px;
+	}
+
+	@media screen and (max-width: 375px) {
+		align-items: center;
+	}
 }
 
 .footer__addr {
 	font-style: normal;
+
+	@media screen and (max-width: 375px) {
+		order: 3;
+	}
 }
 
 .footer__tel {
 	color: var(--light-color);
 	text-decoration: none;
+
+	@media screen and (max-width: 375px) {
+		order: 2;
+	}
 }
 
 .footer__social {
@@ -550,5 +637,14 @@ html {
 				height: 22px;
 			}
 		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		column-gap: 27px;
+	}
+
+	@media screen and (max-width: 375px) {
+		order: 1;
+
 	}
 }
